@@ -1,28 +1,39 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchCategories } from '../features/categories/categoriesSlice';
- 
+import { fetchCategories, selectCategories } from '../features/categories/categoriesSlice';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+import '../Styles/HomePage.css'; 
+
 const HomePage = () => {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.categories);
- 
+  const categories = useSelector(selectCategories);
+
   useEffect(() => {
     dispatch(fetchCategories());
+    AOS.init({ duration: 1000 }); 
   }, [dispatch]);
- 
+
   return (
-<div>
-<h1>Categories</h1>
-<ul>
-        {categories.map(category => (
-<li key={category.idCategory}>
-<Link to={`/category/${category.strCategory}`}>{category.strCategory}</Link>
-</li>
+    <div className="home-page">
+      <h1>Categories</h1>
+      <div className="categories">
+        {categories.map((category, index) => (
+          <Link
+            key={category.idCategory}
+            to={`/category/${category.strCategory}`}
+            className="category"
+            data-aos="fade-up" 
+            data-aos-delay={index * 100} 
+          >
+            <img src={category.strCategoryThumb} alt={category.strCategory} />
+            <h2>{category.strCategory}</h2>
+          </Link>
         ))}
-</ul>
-</div>
+      </div>
+    </div>
   );
 };
- 
+
 export default HomePage;

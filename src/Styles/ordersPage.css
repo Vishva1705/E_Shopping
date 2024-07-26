@@ -1,0 +1,120 @@
+/* ordersPage.css */
+.orders-page-unique {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orders-page-unique h1 {
+  margin-bottom: 20px;
+}
+
+.orders-list-unique {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.order-item-unique {
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.order-item-unique:hover {
+  background-color: #f9f9f9;
+}
+
+.order-item-details-unique {
+  display: flex;
+  align-items: center;
+}
+
+.order-item-image-unique {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.order-item-name-unique {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.order-item-extra-unique {
+  margin: 5px 0;
+  color: #888;
+}
+
+.order-item-button-unique,
+.clear-all-orders-button {
+  padding: 8px 12px;
+  margin: 5px;
+  background-color: #2874f0;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-item-button-unique:hover,
+.clear-all-orders-button:hover {
+  background-color: #0056b3;
+}
+
+.clear-all-orders-button {
+  background-color: #ff6f61;
+}
+
+.clear-all-orders-button:hover {
+  background-color: #e65c50;
+}
+
+.order-link {
+  color: #1e90ff; 
+  font-size: 18px;
+  text-decoration: none; 
+  border-bottom: 2px solid #1e90ff; 
+  transition: color 0.3s ease, border-bottom 0.3s ease; 
+}
+
+.order-link:hover {
+  color: #e60808; 
+  border-bottom: 2px solid #c01717; 
+}
+
+.order-link:focus {
+  outline: none; 
+  border-bottom: 2px solid #4169e1; 
+}
+
+@media (max-width: 768px) {
+  .order-item-details-unique {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-item-image-unique {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .order-item-button-unique,
+  .clear-all-orders-button {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+}
